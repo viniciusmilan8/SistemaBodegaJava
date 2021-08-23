@@ -7,8 +7,8 @@ public class Bebida {
     void comprarBebida(int CodigoBebida, int qtdB){
         QTDEstoque = QTDEstoque + qtdB;
     }
-    void venderBebida(){
-
+    void venderBebida(int CodigoBebida, int qtdV){
+        QTDEstoque = QTDEstoque - qtdV;
     }
     Bebida(int CodigoBebida, String NomeBebida, int QTDEstoque, double TeorAlcoolico, double QTDMl, double PrecoVenda){
         this.CodigoBebida = CodigoBebida;
