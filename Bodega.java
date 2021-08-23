@@ -83,16 +83,21 @@ public class Bodega {
                     b.comprarBebida(cBebida, qtdComprar);
                     break;
                 case 6:
-                    
+                    int vBebida, qtdVender;
+                    System.out.println("Digite o codigo do produto que deseja vender: ");
+                    vBebida = Leitura.nextInt();
+                    System.out.println("Digite a quantidade que deseja vender(UND): ");
+                    qtdVender = Leitura.nextInt();
+                    Bebida v = bebidas.get(vBebida);
+                    v.venderBebida(vBebida, qtdVender);
                     break;
                 case 7:
-                    String nCliente;
-                    int cpfCliente;
+                    String nCliente, cpfCliente;
                     boolean fCliente;
                     System.out.println("Digite o nome do cliente: ");
                     nCliente = Leitura.next();
                     System.out.println("Digite o CPF do cliente: ");
-                    cpfCliente = Leitura.nextInt();
+                    cpfCliente = Leitura.next();
                     fCliente = false;
                     Clientes novoCliente = new Clientes(lerCod, nCliente, cpfCliente, fCliente);
                     lerCod++;
@@ -103,17 +108,16 @@ public class Bodega {
                     Clientes a = cachaceiros.get(i);
                     System.out.println("\nCodigo Cliente: " + a.CodigoCliente);
                     System.out.print("\nNome do cliente: " + a.NomeCliente);
-                    System.out.println("\nCPF do cliente: " + a.CPFCliente);
-                    if(fCliente = false){
-                        System.out.println("Este cliente nao pode comprar fiado!");
+                    System.out.print("\nCPF do cliente: " + a.CPFCliente);
+                    if(fCliente = true){
+                        System.out.println("\nEste cliente nao pode comprar fiado!");
                     }else{
-                        fCliente = true;
-                        System.out.println("Este cliente pode comprar fiado!");
+                        fCliente = false;
+                        System.out.println("\nEste cliente pode comprar fiado!");
                         }
                     }
                     break;
                 case 0:
-                
                     break;
                 default:
                     System.out.println("Opção Inválida!");
@@ -122,4 +126,3 @@ public class Bodega {
             } while (opcao != 0);
         }
     }
-
